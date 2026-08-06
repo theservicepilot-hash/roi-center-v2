@@ -8,18 +8,38 @@ import { cn } from "@/lib/utils";
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   const { location } = useAuth();
-  const [embedded, setEmbedded] = React.useState(false);
+  const [embedded, setEmbedded] = React.useState(() =>
+    typeof window !== "undefined" ? isEmbedMode() : false,
+  );
+  const scrollRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
-    setEmbedded(isEmbedMode());
+    const on = isEmbedMode();
+    setEmbedded(on);
+    const root = document.documentElement;
+    if (on) {
+      root.classList.add("rc-embed");
+      document.body.classList.add("rc-embed");
+    } else {
+      root.classList.remove("rc-embed");
+      document.body.classList.remove("rc-embed");
+    }
+    return () => {
+      root.classList.remove("rc-embed");
+      document.body.classList.remove("rc-embed");
+    };
   }, []);
 
+  // GHL iframe often ignores document scroll — keep an inner scroller + bottom pad.
   if (embedded) {
     return (
-      <div className="flex min-h-full flex-col bg-background">
-        <main className="flex-1 overflow-y-auto scrollbar-thin">
-          <div className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8">{children}</div>
-        </main>
+      <div
+        ref={scrollRef}
+        className="rc-embed-scroll h-[100dvh] max-h-[100dvh] overflow-y-auto overscroll-contain bg-background scrollbar-thin"
+      >
+        <div className="mx-auto w-full max-w-7xl px-4 pb-28 pt-4 sm:px-6 sm:pb-32 lg:px-8">
+          {children}
+        </div>
       </div>
     );
   }
@@ -41,7 +61,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           </div>
         </div>
       </header>
-      <main className={cn("flex-1 overflow-y-auto scrollbar-thin")}>
+      <main className={cn("flex-1")}>
         <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8">{children}</div>
       </main>
     </div>

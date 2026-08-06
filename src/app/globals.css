@@ -86,6 +86,19 @@
       linear-gradient(to bottom, hsl(var(--background)), hsl(210 22% 96%));
     background-attachment: fixed;
   }
+
+  /* GHL custom-menu iframe: lock outer page, scroll inside AppShell */
+  html.rc-embed,
+  html.rc-embed body.rc-embed {
+    height: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    background-attachment: scroll;
+  }
+
+  html.rc-embed body.rc-embed {
+    display: block;
+  }
 }
 
 @layer utilities {

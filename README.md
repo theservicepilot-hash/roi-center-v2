@@ -52,8 +52,7 @@ Jobs live in Supabase table `background_jobs`.
 | INSTALL / OAuth | Enqueue Meta + Google 365d onboard → process via `after()` + cron |
 | UI Sync (default) | Runs **inline** in the request (no queue needed) |
 | UI Sync `async: true` | Enqueued → drained by cron / `after()` |
-| Vercel Cron `*/5` | `/api/cron/process-jobs` drains queue |
-| Vercel Cron `*/10h` | Token refresh + recent ads refresh |
+| Vercel Cron daily | `/api/cron/process-jobs` (05:00 UTC), refresh-tokens (06:00), sync-ads (07:00) — Hobby-safe (1×/day each) |
 
 Local drain (optional):
 ```bash

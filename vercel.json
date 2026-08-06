@@ -2,15 +2,15 @@
   "crons": [
     {
       "path": "/api/cron/process-jobs",
-      "schedule": "*/5 * * * *"
+      "schedule": "0 5 * * *"
     },
     {
       "path": "/api/cron/refresh-tokens",
-      "schedule": "0 */10 * * *"
+      "schedule": "0 6 * * *"
     },
     {
       "path": "/api/cron/sync-ads",
-      "schedule": "30 */10 * * *"
+      "schedule": "0 7 * * *"
     }
   ]
 }

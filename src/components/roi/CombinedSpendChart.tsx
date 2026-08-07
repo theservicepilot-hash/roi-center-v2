@@ -142,8 +142,8 @@ export function CombinedSpendChart({
                   <stop offset="100%" stopColor="#1877F2" stopOpacity={0.02} />
                 </linearGradient>
                 <linearGradient id={`gg-${gid}`} x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#0f766e" stopOpacity={0.32} />
-                  <stop offset="100%" stopColor="#0f766e" stopOpacity={0.02} />
+                  <stop offset="0%" stopColor="#409050" stopOpacity={0.32} />
+                  <stop offset="100%" stopColor="#409050" stopOpacity={0.02} />
                 </linearGradient>
               </defs>
               <CartesianGrid
@@ -191,7 +191,7 @@ export function CombinedSpendChart({
                 type="monotone"
                 dataKey="google"
                 name="google"
-                stroke="#0f766e"
+                stroke="#409050"
                 strokeWidth={2.25}
                 fill={`url(#gg-${gid})`}
                 animationDuration={700}

@@ -37,7 +37,7 @@ export default function HomePage() {
 
   return (
     <div className="relative flex min-h-full flex-col items-center justify-center px-4 py-16">
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-teal-50/70 via-slate-50 to-slate-100" />
+      <div className="pointer-events-none absolute inset-0 bg-brand-wash" />
       <div className="relative z-10 w-full max-w-lg rounded-2xl border border-border bg-card p-10 text-center shadow-sm">
         <div className="mx-auto mb-5 flex size-16 items-center justify-center rounded-2xl bg-primary text-2xl font-bold text-primary-foreground">
           R

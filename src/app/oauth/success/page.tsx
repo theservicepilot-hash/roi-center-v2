@@ -53,7 +53,7 @@ function OAuthSuccessContent() {
 
   return (
     <div className="relative flex min-h-full items-center justify-center overflow-hidden px-4">
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-teal-50/80 via-slate-50 to-slate-100" />
+      <div className="pointer-events-none absolute inset-0 bg-brand-wash" />
       <div className="relative z-10 w-full max-w-md rounded-2xl border border-border bg-card p-8 text-center shadow-sm">
         <div className="mx-auto mb-4 flex size-14 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-lg shadow-primary/20">
           <TrendingUp className="size-7" />

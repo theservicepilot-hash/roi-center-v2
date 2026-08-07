@@ -51,14 +51,14 @@ function buildMetrics(conversionsHint: string): MetricConfig[] {
     {
       key: "impressions",
       label: "Impressions",
-      color: "#0284c7",
+      color: "#2860F0",
       format: num,
       hint: "Daily reach volume",
     },
     {
       key: "clicks",
       label: "Clicks",
-      color: "#059669",
+      color: "#409050",
       format: num,
       hint: "Link & ad clicks",
     },
@@ -72,7 +72,7 @@ function buildMetrics(conversionsHint: string): MetricConfig[] {
     {
       key: "spend",
       label: "Spend",
-      color: "#0f766e",
+      color: "#2860F0",
       format: money,
       hint: "Ad spend by day",
     },

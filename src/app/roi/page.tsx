@@ -23,6 +23,7 @@ import {
 import { AdsDailyCharts } from "@/components/roi/MetaDailyCharts";
 import { RoiCrmSetupCard } from "@/components/roi/RoiCrmSetupCard";
 import { RoiDateRangePicker } from "@/components/roi/RoiDateRangePicker";
+import { RoiSetupNotes } from "@/components/roi/RoiSetupNotes";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -508,9 +509,12 @@ function RoiCenterContent() {
 
       {syncMutation.isError ? (
         <p className="text-sm text-destructive">
-          Sync failed. Check that this location has a valid GHL token and Ad Publishing scopes.
+          Sync failed. Check that this location has a valid GHL token and Ad Publishing
+          connected (Facebook / Google) with Ad Publishing scopes.
         </p>
       ) : null}
+
+      <RoiSetupNotes />
 
       <RoiCrmSetupCard locationKey={locationKey} />
 
